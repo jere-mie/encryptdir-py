@@ -28,12 +28,14 @@ Depending on whether you want to encrypt or decrypt directories, you can run the
 ```bash
 # to encrypt files
 python3 run.py ENCRYPT "put your password here"
+```
 
+```bash
 # to decrypt files
 python3 run.py DECRYPT "put your password here"
 ```
 
-### Testing The Application
+## Testing The Application
 
 If you're a Linux user, a handy bash script is included to make testing this application easier. Simply run:
 
