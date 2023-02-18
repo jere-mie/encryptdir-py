@@ -1,5 +1,5 @@
 from Cryptodome.Random import get_random_bytes
-from rsa_utils import encrypt_with_rsa, decrypt_with_rsa
+from rsa_utils import buffered_encrypt_with_rsa, buffered_decrypt_with_rsa
 
 def create_aes_key(size):
     size_in_bytes = size//8  # 128 bits / 8 = 16 bytes (1 byte = 8 bits)
@@ -17,7 +17,7 @@ def write_aes_keys(keymap, file_extensions, rsa_publickey, outfile):
     for fe in file_extensions:
         out+=keymap[fe]
 
-    data = encrypt_with_rsa(rsa_publickey, out)
+    data = buffered_encrypt_with_rsa(rsa_publickey, out)
 
     with open(outfile, 'wb') as f:
         f.write(data)
@@ -26,7 +26,7 @@ def read_aes_keys(file_extensions, size, rsa_privatekey, infile):
     with open(infile, 'rb') as f:
         data = f.read()
 
-    decrypted = decrypt_with_rsa(rsa_privatekey, data)
+    decrypted = buffered_decrypt_with_rsa(rsa_privatekey, data)
 
     keymap = dict()
 

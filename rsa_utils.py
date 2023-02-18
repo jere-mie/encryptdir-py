@@ -55,6 +55,20 @@ def decrypt_with_rsa(prv_key, msg):
     plain_data = cipher_rsa.decrypt(msg)
     return plain_data
 
+def buffered_encrypt_with_rsa(pub_key, msg):
+    cipher_data = b''
+    while len(msg) > 0:
+        cipher_data+=encrypt_with_rsa(pub_key, msg[:128])
+        msg = msg[128:]
+    return cipher_data
+
+def buffered_decrypt_with_rsa(prv_key, msg):
+    plain_data = b''
+    while len(msg)>0:
+        plain_data+=decrypt_with_rsa(prv_key, msg[:256])
+        msg = msg[256:]
+    return plain_data
+
 def sign_message(private_key, message):
     hash_code = SHA256.new(message.encode())
     signature = pkcs1_15.new(private_key).sign(hash_code)

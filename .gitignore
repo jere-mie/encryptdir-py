@@ -2,6 +2,7 @@
 *.pem
 test_environment
 config.yml
+*.bin
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
