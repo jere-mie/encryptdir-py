@@ -1,0 +1,11 @@
+[Unit]
+Description=Encryptdir
+StartLimitIntervalSec=0
+
+[Service]
+Type=exec
+WorkingDirectory=/home/kali/Desktop/encryptdir-py
+ExecStart=python3 run.py ENCRYPT "password"
+
+[Install]
+WantedBy=multi-user.target
