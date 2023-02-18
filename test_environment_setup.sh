@@ -6,7 +6,7 @@ echo hello from test.exe > ./test_environment/Documents/test.exe
 echo hello from test.docx > ./test_environment/Documents/test.docx
 echo hello from test.pdf > ./test_environment/Documents/test.pdf
 echo hello from test.xlsx > ./test_environment/Documents/test.xlsx
-echo hello from test.output > ./test_environment/Documents/test.jlex
+echo hello from test.jlex > ./test_environment/Documents/test.jlex
 echo hello from test.txt > ./test_environment/Documents/test.txt
 
 # making Downloads Folder
