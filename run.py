@@ -21,7 +21,7 @@ def main():
         print("AES Keychain verified!" if verify_aes_keychain_signature(rsa_key.public_key(), config['aes_key']) else "AES Keychain NOT verified!")
         directories = config['directories']
         for d in directories:
-            for root, _, files in os.walk(f"./test_environment/{d}", topdown=False):
+            for root, _, files in os.walk(d, topdown=False):
                 for name in files:
                         # check file extension
                         ext = os.path.splitext(name)[1][1:]
@@ -36,7 +36,7 @@ def main():
         print("AES Keychain verified!" if verify_aes_keychain_signature(rsa_key.public_key(), config['aes_key']) else "AES Keychain NOT verified!")
         directories = config['directories']
         for d in directories:
-            for root, _, files in os.walk(f"./test_environment/{d}", topdown=False):
+            for root, _, files in os.walk(d, topdown=False):
                 for name in files:
                         # check file extension
                         ext = os.path.splitext(name)[1][1:]
