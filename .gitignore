@@ -3,6 +3,7 @@
 test_environment
 config.yml
 *.bin
+*.signature
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
